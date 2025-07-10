@@ -1,0 +1,299 @@
+/* Importação de fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis de Cores (fácil de customizar!) */
+:root {
+    --bg-color: #1a1a2e;
+    --primary-color: #16213e;
+    --secondary-color: #0f3460;
+    --accent-color: #e94560;
+    --text-color: #dcdcdc;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    background-color: rgba(26, 26, 46, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--secondary-color);
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--accent-color);
+}
+
+/* Estilos Gerais de Seção */
+section {
+    padding: 6rem 5% 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Seção Início */
+#inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.inicio-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+/* Efeito de digitação com cursor piscando */
+#typing-effect {
+    font-weight: 600;
+    color: var(--text-color);
+}
+#typing-effect::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Botão Principal */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+/* Seção Sobre */
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+}
+.sobre-text {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+/* Seção Tecnologias */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+.tech-card {
+    background-color: var(--primary-color);
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.tech-card i {
+    font-size: 4rem;
+    color: var(--accent-color);
+}
+.tech-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+.ts-logo {
+    width: 64px;
+    height: 64px;
+}
+
+/* Seção Projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+.projeto-card {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.projeto-card:hover {
+    transform: scale(1.03);
+}
+.projeto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.projeto-card h3 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem 0.5rem;
+}
+.projeto-card p {
+    padding: 0 1.5rem 1rem;
+    flex-grow: 1;
+}
+.projeto-links {
+    padding: 0 1.5rem 1.5rem;
+}
+.projeto-links .btn {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    background-color: var(--secondary-color);
+}
+.projeto-links .btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Seção Contato */
+#contato {
+    text-align: center;
+}
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.contato-item {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+.contato-item:hover {
+    color: var(--accent-color);
+}
+.contato-item i {
+    margin-right: 0.5rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: var(--primary-color);
+    border-top: 1px solid var(--secondary-color);
+}
+
+/* Animação de Fade-in ao Rolar */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Para simplicidade, o menu some. Pode ser substituído por um menu hamburguer com mais JS */
+    }
+    .inicio-content h1 {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    .sobre-content {
+        flex-direction: column;
+    }
+}
